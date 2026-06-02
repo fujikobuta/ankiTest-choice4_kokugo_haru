@@ -132,7 +132,7 @@
             overflow-wrap: anywhere;
         }
 
-        /* 4択ボタンコンテナ */
+        /* 選択肢ボタンコンテナ */
         #choice-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -158,7 +158,9 @@
             align-items: center;
             justify-content: center;
             min-height: 80px;
+            box-sizing: border-box;
             word-break: break-all;
+            overflow: hidden;
         }
 
         .choice-btn img {
@@ -428,7 +430,7 @@
 
     <script>
         // QUESTIONS_DATA_START
-        const embeddedQuestions = [{"q": "【言いそこないを責める】〇〇をとる", "n": 1, "a": "あげ足", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【危険がせまっている】足下に〇〇がつく", "n": 2, "a": "火", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【相手の弱みにつけこむ】〇〇を見る", "n": 3, "a": "足下", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【はっと驚く】息を〇〇", "n": 4, "a": "のむ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【知らない所で悪口を言われる】〇〇をさされる", "n": 5, "a": "後ろ指", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【不愛想に相手をする】肩で〇〇をくくる", "n": 6, "a": "鼻", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【大変驚く】〇〇をつぶす", "n": 7, "a": "肝", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【人の話に割りこむ】口を〇〇", "n": 8, "a": "はさむ・出す", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【相手の計略に引っかかる】手に〇〇", "n": 9, "a": "乗る", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【気が進まずぐずぐずする】〇〇をふむ", "n": 10, "a": "二の足", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【得意なさま】鼻が〇〇", "n": 11, "a": "高い", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【打ち解けて話し合う】〇〇を交える", "n": 12, "a": "ひざ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【集まって相談する】〇〇を集める", "n": 13, "a": "額", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【苦労をいとわず力をつくす】骨を〇〇", "n": 14, "a": "折る", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【利口で理解が早い】目から〇〇へぬける", "n": 15, "a": "鼻", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【見通しがはっきりする】〇〇がつく", "n": 16, "a": "目鼻", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【じっと見つめる】目を〇〇", "n": 17, "a": "こらす", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【目を大きく見開く】目を〇〇にする", "n": 18, "a": "皿", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【見なかったふりをする】目を〇〇", "n": 19, "a": "つぶる", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【手を出せずただながめている】指を〇〇", "n": 20, "a": "くわえる", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【進み方がおそい】〇〇の歩み", "n": 21, "a": "牛", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【何かをさがし出そうと鋭い目つきで見回すさま】鶏の〇〇の目", "n": 22, "a": "たか", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【相手と気が合う】〇〇が合う", "n": 23, "a": "馬", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【わけがわからない】〇〇につままれる", "n": 24, "a": "きつね", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【大勢がばらばらに散ってにげるさま】〇〇の子を散らす", "n": 25, "a": "くも", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【とても仲が悪いさま】〇〇の仲", "n": 26, "a": "犬猿", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【軽はずみに人に従う】〇〇に乗る", "n": 27, "a": "しり馬", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【ごくわずか】〇〇の涙", "n": 28, "a": "すずめ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【有力者の発言】〇〇の一声", "n": 29, "a": "鶴", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【人手が足りない】〇〇の手も借りたい", "n": 30, "a": "猫", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【非常にせまい】猫の〇〇", "n": 31, "a": "額", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【おとなしいふりをする】〇〇をかぶる", "n": 32, "a": "猫", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【逃げ場がないさま】袋の〇〇", "n": 33, "a": "ねずみ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【急に元気がなくなる】青菜に〇〇", "n": 34, "a": "塩", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【何の関係もない全くの他人】〇〇の他人", "n": 35, "a": "赤", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【一度経験した利益を期待する】〇〇をしめる", "n": 36, "a": "味", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【手遅れである】後の〇〇", "n": 37, "a": "祭り", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【仕事をなまける】〇〇を売る", "n": 38, "a": "油", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【ひどく驚きあわてる】〇〇をくう", "n": 39, "a": "あわ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【仕事がその人によく合う】〇〇につく", "n": 40, "a": "板", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【顔つきが非常に似ている】〇〇二つ", "n": 41, "a": "うり", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【その場をにごかす】〇〇をにごす", "n": 42, "a": "お茶", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【確かだと保証する】〇〇をつける", "n": 43, "a": "折り紙", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【緊張しながら見守る】〇〇をのむ", "n": 44, "a": "かたず", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【物事が円滑に進まない】〇〇が立つ", "n": 45, "a": "角", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【障参する】〇〇をぬぐ", "n": 46, "a": "かぶと", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【遠慮する必要がない】〇〇が置けない", "n": 47, "a": "気", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【今を押す】〇〇をさす", "n": 48, "a": "くぎ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【とらえ所がないさま】〇〇をつかむよう", "n": 49, "a": "雲", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【過失が良い結果を生む】〇〇の功名", "n": 50, "a": "けが", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【あきらめる】〇〇を投げる", "n": 51, "a": "さじ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【激しく争う】〇〇をけずる", "n": 52, "a": "しのぎ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【待ちくたびれる】〇〇を切らす", "n": 53, "a": "しびれ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【知らないふりをしてとぼける】〇〇を切る", "n": 54, "a": "しら", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【予測どおりに物事が運ぶ】〇〇に当たる", "n": 55, "a": "図", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【まちがいないと保証する】〇〇をおす", "n": 56, "a": "太鼓判", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【見くびる】〇〇をくくる", "n": 57, "a": "高", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【すらすらと物を言うさま】〇〇に水", "n": 58, "a": "立て板", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【放っておく】〇〇に上げる", "n": 59, "a": "たな", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【念を押す】〇〇を押す", "n": 60, "a": "だめ", "t": "", "choices": [], "practice": false, "p": 1}];
+        const embeddedQuestions = [{"q": "【立派なものにあるわずかな欠点】〇〇にきず", "n": 1, "a": "玉", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【幼いときからの友】〇〇の友", "n": 2, "a": "竹馬", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【勢いが盛んな時期を過ぎる】〇〇をこす", "n": 3, "a": "峠", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【どうしようもなく困る】〇〇にくれる", "n": 4, "a": "途方", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【くやしさをがまんする】〇〇をのむ", "n": 5, "a": "涙", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【苦労せずに利益を得る】ぬれ手で〇〇", "n": 6, "a": "あわ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【うらみに思い忘れない】〇〇に持つ", "n": 7, "a": "根", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【急なできごとに驚く】寝耳に〇〇", "n": 8, "a": "水", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【根拠が全くない】〇〇も〇〇もない", "n": 9, "a": "根・葉", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【降参する】〇〇を上げる", "n": 10, "a": "音", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【相手に勝ちや名誉をゆずる】〇〇を持たす", "n": 11, "a": "花", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【欠点がない】〇〇の打ちどころがない", "n": 12, "a": "非", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【表面に現れているのは全体の一部である】〇〇の一角", "n": 13, "a": "氷山", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【要点を正しくとらえる】的を〇〇", "n": 14, "a": "射る", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【その人より優れた者がいない】〇〇に出る者がない", "n": 15, "a": "右", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【以前のものごとをなかったことにする】〇〇に流す", "n": 16, "a": "水", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【努力が実を結ばずだめになる】水の〇〇", "n": 17, "a": "あわ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【横からじゃまをする】〇〇をさす", "n": 18, "a": "水", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【何となく心に感じる】虫が〇〇", "n": 19, "a": "知らせる", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【何となく好きになれない】虫が〇〇", "n": 20, "a": "好かない", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【今にも絶えそうなさま】虫の〇〇", "n": 21, "a": "息", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【少しの助けでは効果がない】〇〇に水", "n": 22, "a": "焼け石", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【突然に物事をするさま】やぶから〇〇", "n": 23, "a": "棒", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【結論が出ない】〇〇が明かない", "n": 24, "a": "らち", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【追いつめられるとどんなものにでも助けを求める】〇〇にもすがる", "n": 25, "a": "わら", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【ひどく疲れたさま】〇〇を出す", "n": 26, "a": "あご", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【気持ちが落ち着いている】足が〇〇に着く", "n": 27, "a": "地", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【食べ物がくさりやすい】足が〇〇", "n": 28, "a": "早い", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【考えや行動をそろえる】足〇〇をそろえる", "n": 29, "a": "並", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【すきにつけこみ失敗させる】足を〇〇", "n": 30, "a": "すくう", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【対等にふるまえない】頭が〇〇", "n": 31, "a": "上がらない", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【柔軟な考え方ができない】頭が〇〇", "n": 32, "a": "かたい", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【腕前を見せたい】腕が〇〇", "n": 33, "a": "鳴る", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【力や技術を発揮する】腕を〇〇", "n": 34, "a": "ふるう", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【有名になり、無理が通る】顔が〇〇", "n": 35, "a": "利く", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "【知らない所で悪口を言われる】〇〇をさされる", "n": 36, "a": "後ろ指", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【不愛想に相手をする】肩で〇〇をくくる", "n": 37, "a": "鼻", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【大変驚く】〇〇をつぶす", "n": 38, "a": "肝", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【打ち解けて話し合う】〇〇を交える", "n": 39, "a": "ひざ", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【集まって相談する】〇〇を集める", "n": 40, "a": "額", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【目を大きく見開く】目を〇〇にする", "n": 41, "a": "皿", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【進み方がおそい】〇〇の歩み", "n": 42, "a": "牛", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【手遅れである】後の〇〇", "n": 43, "a": "祭り", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【ひどく驚きあわてる】〇〇をくう", "n": 44, "a": "あわ", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【仕事がその人によく合う】〇〇につく", "n": 45, "a": "板", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【確かだと保証する】〇〇をつける", "n": 46, "a": "折り紙", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【激しく争う】〇〇をけずる", "n": 47, "a": "しのぎ", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【待ちくたびれる】〇〇を切らす", "n": 48, "a": "しびれ", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【予測どおりに物事が運ぶ】〇〇に当たる", "n": 49, "a": "図", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【まちがいないと保証する】〇〇をおす", "n": 50, "a": "太鼓判", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【すらすらと物を言うさま】〇〇に水", "n": 51, "a": "立て板", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "【念を押す】〇〇を押す", "n": 52, "a": "だめ", "t": "", "choices": [], "practice": true, "p": 1}];
         // QUESTIONS_DATA_END
 
         let questions = [];
@@ -548,7 +550,7 @@
                     
                     rawData.push({
                         q: q, n: num, a: a, t: type_val,
-                        choices: c_val ? c_val.split(/[、\n]/).map(s => s.trim()).filter(s => s) : [],
+                        choices: c_val ? c_val.split(/[、，,\n]/).map(s => s.trim()).filter(s => s) : [],
                         practice: practice, p: getColorPriority(cellI)
                     });
                 }
@@ -607,10 +609,10 @@
                 return /\.(jpg|jpeg|png|gif|webp)$/i.test(text.trim());
             };
 
-            const isChoiceMode = (q.t === "4択");
+            const isChoiceMode = (q.t && (q.t.includes("択") || q.t === "選択"));
             
             if (isChoiceMode) {
-                // 4択モード
+                // 選択肢モード
                 choiceContainer.style.display = "grid";
                 selfGradeContainer.style.display = "none";
                 
@@ -623,15 +625,49 @@
                 }
                 shuffleArray(displayChoices);
 
+                const numChoices = displayChoices.length;
+                choiceContainer.style.gridTemplateColumns = numChoices === 1 ? "1fr" : "1fr 1fr";
+                
+                // リセット（元のサイズに戻す）
+                choiceContainer.style.flexGrow = "";
+                choiceContainer.style.gridAutoRows = "";
+                choiceContainer.style.minHeight = "";
+                choiceContainer.style.gap = "12px";
+
+                // 選択肢が4つを超える場合のみ、画面内に収めるための縮小レイアウトを適用
+                if (numChoices > 4) {
+                    choiceContainer.style.flexGrow = "0"; // 伸ばさない
+                    choiceContainer.style.gridAutoRows = "minmax(35px, 80px)"; // 基本は元の80pxだが、はみ出す場合のみ35pxまで縮む
+                    choiceContainer.style.minHeight = "0";
+                    choiceContainer.style.gap = numChoices > 6 ? "8px" : "12px";
+                }
+
                 displayChoices.forEach(choiceText => {
                     const btn = document.createElement('button');
                     btn.className = 'choice-btn';
                     btn.setAttribute('data-choice', choiceText);
                     if (q.practice && choiceText === q.a) btn.classList.add('practice-hint');
                     
+                    // フォントサイズとボタンサイズの動的調整
+                    let fontSize = "1.2rem";
+                    if (numChoices > 4) {
+                        btn.style.padding = "8px";
+                        btn.style.minHeight = "0"; // gridAutoRowsに任せるため解除
+                        btn.style.height = "100%";
+                    }
+                    
+                    if (numChoices >= 8) fontSize = "0.9rem";
+                    else if (numChoices >= 6) fontSize = "1.0rem";
+                    
+                    if (choiceText.length > 20) fontSize = "0.8rem";
+                    else if (choiceText.length > 10 && fontSize === "1.2rem") fontSize = "1.0rem";
+                    
+                    btn.style.fontSize = fontSize;
+                    
                     if (isImage(choiceText)) {
                         const img = document.createElement('img');
                         img.src = `image/${choiceText.trim()}`;
+                        img.style.maxHeight = numChoices >= 6 ? "60px" : "100px";
                         btn.appendChild(img);
                     } else {
                         btn.innerText = choiceText;
